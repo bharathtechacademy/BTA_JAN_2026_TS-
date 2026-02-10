@@ -60,8 +60,14 @@ let salary = 100000;
 salary=null;
 console.log(salary);
 
-//6.symbol ==>
-
+//6.symbol ==> Symbol represents a unique hidden identifier. 
+let countryOfOrigin = Symbol();
+let productInfo = {
+    productName : "OnePlus 17",
+    price: 90000,
+    [countryOfOrigin]: "China"
+}
+console.log(productInfo);
 
 /****************************************************/
 /*******NON-PREMETIVE DATA TYPES IN JAVASCRIPT*******/
@@ -109,6 +115,8 @@ function launchBrowserAndLogin(browserName) {
     console.log("Click on the login button");
 }
 
+console.log(launchBrowserAndLogin());
+
 //4.Set ==> Set represents a collection of unique values of any data type.
 let empIds = new Set();
 empIds.add(123);
@@ -133,7 +141,25 @@ console.log(empMap.size);
 empMap.delete(127);
 console.log(empMap);
 
+//6.Date ==> Date represents date and time in JavaScript. 
 
+let currentDate = new Date();
+console.log(currentDate);
 
+//current year
+console.log(currentDate.getFullYear());
 
-//6.Date ==> 
+//Current month. 
+console.log(currentDate.getMonth()+1);//0 to 11
+
+//Current date 
+console.log(currentDate.getDate());
+
+//Current hour 
+console.log(currentDate.getHours());
+
+//Current minutes 
+console.log(currentDate.getMinutes());
+
+//Current seconds 
+console.log(currentDate.getSeconds());
