@@ -52,4 +52,30 @@ console.log(currentYear());
 
 
 
-// 3. Anonymous function
+// 3. Anonymous function ==> Anonymous function is a function that is defined without a name. These anonymous functions are regularly used as parameters for other functions.
+
+//Syntax:
+// function outerFunction(functionparameter):returnType {
+//   statements
+// }
+
+//function with function parameter
+function mainFunction( innerFunction: () => number ):void {
+     innerFunction();    //implentation     
+}
+
+
+//calling function
+mainFunction(
+
+function():number{
+    console.log(name);
+    return 123;
+}
+
+);
+
+
+// function run (name: string){
+//     console.log("Mr"+ name);
+// }
