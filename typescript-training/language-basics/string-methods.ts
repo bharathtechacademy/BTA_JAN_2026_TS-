@@ -90,3 +90,38 @@ let splittedValues:string [] = originalString.split(" ");
 console.log(splittedValues[3]);
 console.log(splittedValues[7]);
 
+//13. Compare two different strings. 
+//=== Operator for Strict Equality  (compares both value and type)(case-sensitive)
+//== Operator for Loose Equality  (compares only value, performs type coercion)(case-sensitive)
+//includes() method for Substring Check (case-sensitive)
+//startsWith() and endsWith() methods for Prefix/Suffix Check (case-sensitive)
+console.log("13. Compare two different strings.");
+let string1:string = "Hello, World!";
+let string2:string = "hello, world!";
+console.log("Using === operator : "+(string1===string2));
+console.log("Using == operator : "+(string1==string2));
+let string3:string = "100";//string
+let numberValue:number = 100;//number
+console.log("Using === operator : "+(string3===numberValue));//false
+console.log("Using == operator : "+(string3==numberValue));//true
+let string4:string ="TypeScript";
+console.log("TypeScript includes 'Script' : "+string4.includes("Script"));
+console.log("TypeScript includes 'Script' : "+string4.includes("script"));
+console.log("TypeScript start with 'Type' : "+string4.startsWith("Type"));
+console.log("TypeScript ends with 'Script' : "+string4.endsWith("Script"));
+
+//14. Data Conversions
+console.log("14.Data Conversions")
+
+//converting other data type to string
+let stdCode:number = 144;
+let phone:number = 345345;
+let stdCodeString = String(stdCode);
+console.log(stdCodeString+phone);
+
+//converting  string to other data type
+let balance:string = "Account balance is 9,999.99 rupees";
+balance = balance.replace(/[^0-9.]/g,"");
+let bal:number = parseFloat(balance);
+console.log(bal>=10000);
+
