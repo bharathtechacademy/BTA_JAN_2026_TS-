@@ -2,6 +2,8 @@ const n: number = 5;   // Total number of rows for the pattern
 
 // Outer loop controls the number of rows
 for (let i: number = 1; i <= n; i++) {
+
+    //empty line
     let line: string = "";
 
     // Inner loop to print spaces before stars in each row

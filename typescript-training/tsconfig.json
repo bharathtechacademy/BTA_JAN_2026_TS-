@@ -19,6 +19,10 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
+
+    //Adding module configuration to allow using ES modules in Node.js 
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
     
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
