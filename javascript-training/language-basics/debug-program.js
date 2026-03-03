@@ -14,6 +14,6 @@ console.log("Executing Line 10");
 
 //Logic to sum two numbers
 function sumOfNumbers(a,b){
-    c=a+b;
+    c=a-b;
     console.log("Sum is: " + c);
 }
