@@ -3,7 +3,7 @@ import { test, expect,chromium } from '@playwright/test';
 test('Browser Actions - Open and Close Browser', async () => {
 
     //Launch the browser engine (chrome engine)
-    const browserEngine = await chromium.launch({channel:'chrome', headless:false}); //msedge
+    const browserEngine = await chromium.launch({channel:'chrome', headless:false, args: ['--start-maximized']}); //msedge
 
     //Launch the browser context or incognito window from the browser engine. 
     const browserContext = await browserEngine.newContext();
