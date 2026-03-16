@@ -1,0 +1,24 @@
+{
+    "app":{
+        "url":"https://accounts.creatio.com/login/alm",
+        "title":"Log in | Creatio",
+        "username":"bharattechacademy5@outlook.com",
+        "password":"BharathTechAcademy#1234"
+    },
+    "db":{
+        "host":"localhost",
+        "port":3306,
+        "user":"root",
+        "password":"BharathTechAcademy#1234",
+        "database":"testdb"
+    },
+    "api":{
+        "baseurl":"https://jsonplaceholder.typicode.com",
+        "token":"your_api_token_here"
+    },
+    "ollama":{
+        "baseurl":"https://jsonplaceholder.typicode.com",
+        "endpoint":"/posts",
+        "token":"your_ollama_token_here"
+    }
+}

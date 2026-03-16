@@ -44,7 +44,8 @@ console.log(person);
 
 //6. Check whether a particular property is available within the object or not. 
 console.log("empId" in person);
-console.log("age" in person);
+console.log("address.country" in person); //giving false`
+
 
 //7. Get all the keys from the object. 
 console.log(Object.keys(person));

@@ -38,9 +38,11 @@ console.log("Character at index 5 : "+charAtIndex5);
 //reverse the string
 let reverseString:string = "";
 for(let i:number=stringLength-1;i>=0;i--){
-    reverseString=reverseString+originalString.charAt(i);
+    reverseString=reverseString+originalString.charAt(i);    
 }
 console.log("Reverse the string is :"+reverseString);
+
+//
 
 //4. Removing unwanted spaces (begining & ending) from the string ==> string.trim();
 console.log("4. Removing unwanted spaces (begining & ending) from the string");
