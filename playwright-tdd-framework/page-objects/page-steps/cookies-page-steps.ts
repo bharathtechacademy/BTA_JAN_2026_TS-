@@ -26,6 +26,29 @@ export class CookiesPageSteps {
         }
     }
 
+    
+    // Method to verify the logos on the cookies pop-up
+    async verifyCookiesPopUpLogos() {
+        await this.web.isElementVisible(cookiesPage.creatioLogo);
+        await this.web.isElementVisible(cookiesPage.cookieBotLogo);
+    }
+
+    //Method to verify all the selection buttons in the cookies pop-up 
+    async verifyCookiesPopUpSelectionButtons() {
+        await this.web.isElementVisible(cookiesPage.allowAllButton);
+        await this.web.isElementVisible(cookiesPage.allowSelectionButton);
+        await this.web.isElementVisible(cookiesPage.denyButton);
+    }
+
+    //Method to verify switch buttons are displayed in the cookies pop-up 
+    async verifyCookiesPopUpSwitchButtons() {
+        await this.web.isElementVisible(cookiesPage.necessarySwitchButton);
+        await this.web.isElementVisible(cookiesPage.preferencesSwitchButton);
+        await this.web.isElementVisible(cookiesPage.statisticsSwitchButton);
+        await this.web.isElementVisible(cookiesPage.marketingSwitchButton);
+    }
+
+
 
 
 }
