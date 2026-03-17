@@ -6,7 +6,7 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "ui:chrome": "npx playwright test tests/ui/application-tests.spec.ts --project=chromium",
+   
   },
   "dependencies": {
     "excel": "^1.0.1",

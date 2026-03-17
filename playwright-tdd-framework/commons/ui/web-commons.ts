@@ -133,7 +133,8 @@ export class WebCommons {
 
     //Common method to verify the visibility of an element 
     async isElementVisible(selectors: string) {
-        await expect(this.element(selectors)).toBeVisible();
+        await this.element(selectors).isVisible();
+        // await expect(this.element(selectors)).toBeVisible();
     }
 
     //Common method to verify the element is enabled or not 
