@@ -4,6 +4,7 @@
 //2. protected ==> Can be accessed either within the class or its subclasses 
 //3. private ==> Can be accessed only within the class. 
 
+
 class Person {
 
     public name: string = "Bharath Reddy"; //public data (accessable everywhere)

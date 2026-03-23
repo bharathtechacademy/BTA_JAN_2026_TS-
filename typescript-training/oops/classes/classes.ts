@@ -46,3 +46,6 @@ let obj = new Employee();//new + constructor = object
 console.log(obj.empId);
 console.log(obj.empName);
 obj.empAddress();
+
+instead of let , const in class we can use var keyword to declare the variables.
+var empName = "Bharath Reddy";
