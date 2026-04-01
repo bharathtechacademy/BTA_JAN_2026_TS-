@@ -25,7 +25,6 @@
 * role = 'switch' for toggle button
 * role = 'heading' for heading
 * role = 'list' for list
-* role = 'listitem' for list item
 */
 
 //2.getByLabel(): you need to identify the label of the element, and you need to use it as a locator. 

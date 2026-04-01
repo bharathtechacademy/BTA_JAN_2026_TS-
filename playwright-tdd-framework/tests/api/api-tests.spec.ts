@@ -1,32 +1,37 @@
-playwright-tdd-framework
-│
-├── config
-│   └── config.json
-│       ➜ Stores configuration details for UI, API, and Database
-│       Example: App URL, Base URL, DB connection details, etc.
-│
-├── testdata
-│   ➜ Stores test data for UI, API, and DB test cases
-│
-├── screenshots
-│   ➜ Stores screenshots captured during failed test executions 📸
-│
-├── files
-│   ➜ Stores flat files such as Excel, PDF, images, or any files required during execution
-│
-├── utils
-│   ➜ Helper utilities for framework operations
-│   Example: Excel reader, PDF reader, file operations, etc.
-│
-├── commons
-│   ➜ Common reusable methods for
-│      • UI automation
-│      • API automation
-│      • Database automation
-│
-├── page-objects
-│   ➜ Maintains page elements and reusable page methods
-│   Implements the **Page Object Model (POM) Design Pattern**
-│
-└── tests
-    ➜ Contains all test scripts and spec files
+import { test } from '@playwright/test';
+import { ApiCommons } from '../../commons/api/api-commons';
+import testdata from '../../testdata/api/data.json';
+
+test.describe('API Tests', () => {
+
+    let apiCommons: ApiCommons;
+    let repoName: any;
+
+    //Prepare API request context before each and every test case. 
+    test.beforeEach(async () => {
+        apiCommons = new ApiCommons();
+        await apiCommons.init();
+    });
+
+    //Test Case 1: Request to create duplicate repository with in github
+    test('Create duplicate repository in github', async () => {
+        const data = testdata.duplicateRepo;
+        await apiCommons.getResponse(data.requestType, data.endpoint, data.body);
+        await apiCommons.validateStatusCode(data.expectedCode);
+        await apiCommons.validateStatusMessage(data.expectedStatusMessage);
+        await apiCommons.validateResponseBody('message', data.expectedErrorMessage);
+    });
+
+    //Test Case 2: Request to create valid repository with in github
+    test('Create valid repository in github', async () => {
+        const data = testdata.validRepo;
+        await apiCommons.getResponse(data.requestType, data.endpoint, data.body);
+        await apiCommons.validateStatusCode(data.expectedCode);
+        await apiCommons.validateStatusMessage(data.expectedStatusMessage);
+        await apiCommons.validateResponseBody('name', data.body.name);
+        //Storing the repository name created in the response to use it in the next test case. 
+        repoName = await apiCommons.storeDataFromResponse('validRepo', 'name');
+        console.log(data)
+    });
+
+});

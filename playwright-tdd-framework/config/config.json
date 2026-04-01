@@ -13,8 +13,9 @@
         "database":"dvdrental"
     },
     "api":{
-        "baseurl":"https://jsonplaceholder.typicode.com",
-        "token":"your_api_token_here"
+        "baseurl":"https://api.github.com",
+        "token":"Bearer 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",
+        "owner":"bharathtechacademy05"
     },
     "ollama":{
         "baseurl":"https://jsonplaceholder.typicode.com",

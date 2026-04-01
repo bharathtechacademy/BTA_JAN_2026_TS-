@@ -1,0 +1,370 @@
+{
+  "info": {
+    "_postman_id": "22894b02-2d11-44eb-93d5-13c1cbf27993",
+    "name": "git-api-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31694517",
+    "_collection_link": "https://go.postman.co/collection/31694517-22894b02-2d11-44eb-93d5-13c1cbf27993?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Request to get existing repository with invalid token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Validate status code\r",
+              "pm.test(\"Validate status code for request to get repo with invalid token\", function () {\r",
+              "    pm.expect(pm.response.code).to.eql(404);\r",
+              "});\r",
+              "\r",
+              "//Validate status message\r",
+              "pm.test(\"Validate status code for request to get repo with invalid token\", function () {\r",
+              "    pm.expect(pm.response.status).to.eql(\"Not Found\");\r",
+              "});\r",
+              "\r",
+              "//Validate Response body\r",
+              "pm.test(\"Validate response body for request to get repo with invalid token\", function () {\r",
+              "    pm.expect(pm.response.json().message).to.eql(\"Not Found\");\r",
+              "    pm.expect(pm.response.json().status).to.eql(\"404\");\r",
+              "});\r",
+              "\r",
+              "//wait for 2 sec\r",
+              "setTimeout(() => {\r",
+              "    console.log(\"2 seconds completed\");\r",
+              "}, 2000);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "123456asdfgh",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{BaseUrl}}/repos/{{Owner}}/POST",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "POST"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request to get existing repository with valid token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Validate status code\r",
+              "pm.test(\"Validate status code for request to get repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.code).to.eql(200);\r",
+              "});\r",
+              "\r",
+              "//Validate status message\r",
+              "pm.test(\"Validate status code for request to get repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.status).to.eql(\"OK\");\r",
+              "});\r",
+              "\r",
+              "//Validate Response body\r",
+              "pm.test(\"Validate response body for request to get repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.json().name).to.eql(\"POST\");\r",
+              "    pm.expect(pm.response.json().private).to.eql(true);\r",
+              "});\r",
+              "\r",
+              "//wait for 2 sec\r",
+              "setTimeout(() => {\r",
+              "    console.log(\"2 seconds completed\");\r",
+              "}, 2000);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{BaseUrl}}/repos/{{Owner}}/POST",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "POST"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request to update existing repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Validate status code\r",
+              "pm.test(\"Validate status code for request to update repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.code).to.eql(200);\r",
+              "});\r",
+              "\r",
+              "//Validate status message\r",
+              "pm.test(\"Validate status code for request to update repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.status).to.eql(\"OK\");\r",
+              "});\r",
+              "\r",
+              "//Validate Response body\r",
+              "pm.test(\"Validate response body for request to update repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.json().name).to.eql(\"POST\");\r",
+              "    pm.expect(pm.response.json().private).to.eql(false);\r",
+              "});\r",
+              "\r",
+              "//wait for 2 sec\r",
+              "setTimeout(() => {\r",
+              "    console.log(\"2 seconds completed\");\r",
+              "}, 2000);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"private\":true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/repos/{{Owner}}/POST",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "POST"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request To Create Duplicate Repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Validate status code\r",
+              "pm.test(\"Validate status code for request to update repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.code).to.eql(422);\r",
+              "});\r",
+              "\r",
+              "//Validate status message\r",
+              "pm.test(\"Validate status code for request to update repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.status).to.contains(\"Unprocessable Entity\");\r",
+              "});\r",
+              "\r",
+              "//Validate Response body\r",
+              "pm.test(\"Validate response body for request to update repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.json().message).to.eql(\"Repository creation failed.\");\r",
+              "    pm.expect(pm.response.json().errors[0].message).to.eql(\"name already exists on this account\");\r",
+              "});\r",
+              "\r",
+              "//wait for 2 sec\r",
+              "setTimeout(() => {\r",
+              "    console.log(\"2 seconds completed\");\r",
+              "}, 2000);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"POST\",\r\n    \"description\": \"Sample Duplicate Repo From Postman\",\r\n    \"private\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/user/repos",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request To Create Valid Repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Validate status code\r",
+              "pm.test(\"Validate status code for request to create repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.code).to.eql(201);\r",
+              "});\r",
+              "\r",
+              "//Validate status message\r",
+              "pm.test(\"Validate status code for request to create repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.status).to.eql(\"Created\");\r",
+              "});\r",
+              "\r",
+              "//Validate Response body\r",
+              "pm.test(\"Validate response body for request to create repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.json().name).to.eql(\"POST1\");\r",
+              "    pm.expect(pm.response.json().private).to.eql(false);\r",
+              "});\r",
+              "\r",
+              "//wait for 2 sec\r",
+              "setTimeout(() => {\r",
+              "    console.log(\"2 seconds completed\");\r",
+              "}, 2000);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"POST1\",\r\n    \"description\": \"Sample Valid Repo From Postman\",\r\n    \"private\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/user/repos",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request to delete existing repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Validate status code\r",
+              "pm.test(\"Validate status code for request to create repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.code).to.eql(204);\r",
+              "});\r",
+              "\r",
+              "//Validate status message\r",
+              "pm.test(\"Validate status code for request to create repo with valid token\", function () {\r",
+              "    pm.expect(pm.response.status).to.eql(\"No Content\");\r",
+              "});\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{BaseUrl}}/repos/{{Owner}}/POST1",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "POST1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
