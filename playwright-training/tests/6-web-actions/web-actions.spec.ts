@@ -122,6 +122,10 @@ test('CSS selector syntax', async ({ page }) => {
     let selectedOption = await dropdown.inputValue();
     await expect(selectedOption).toBe('option1');
 
+    //Verify the all selected option in the dropdown.
+    let selectedOptions = await dropdown.sele
+    await expect(selectedOptions).toEqual(['Option 1', 'Option 2', 'Option 3']);
+
     //Verify total options available in the dropdown. 
     let optionsCount = await dropdown.locator('option').count();
     await expect(optionsCount).toBe(3);
@@ -186,6 +190,11 @@ Hyperlink Web Element Validations
 
     //Locate the hyperlink element
     let hyperlink = page.locator("a#learn-more");
+
+    //What is the inner text of the hyperlink?
+    hyperlink.innerText();
+
+
 
     //Verify the hyperlink. (method 1)
     await expect(hyperlink).toHaveAttribute('href', 'expected-link.html');
