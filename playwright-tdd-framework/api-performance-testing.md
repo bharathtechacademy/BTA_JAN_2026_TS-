@@ -112,3 +112,68 @@ infinite => Run continuously until I stop.
 7. Specify thread lifetime : 
 => Duration : duration is all about the total time that you want to test the run. (Ex: 60 -> Test run for one minute only.)
 => Startup Delay : Delay before each test begins (ex: 10 -> test start after 10 seconds.)
+
+## What is a sampler in JMeter? 
+In simple terms, a sampler is an actual API call or some request executed by a virtual user. 
+
+There are multiple types of samplers available in the JMeter tool. 
+- HTTP request (mostly used for APIs)
+- JDBC request for database testing
+- FTP request
+
+## How to add a sampler to send an API request and validate the performance of the API request? 
+Right click on the Thread group => HTTP request template will be displayed ==> We should update API request details within the HTTP request template
+
+![alt text](image-2.png)
+
+
+## What is the config elements in JMeter? 
+Right click on the Thread group => Config Element ==> Select Component
+Config elements are nothing but a set of templates that we are going to use to maintain the test data to provide or pass header values to our API requests. 
+
+Ex: 
+User Defined Variables > To maintain the test data that we can reuse in each and every API request 
+Http Header Manager > The component that we are going to use to pass header values to each and every API request 
+
+## Assertions in JMeter ?
+In simple terms, assertion is all about the JMeter method that is going to verify whether the response is correct or not. 
+
+Why are assertions important? 
+- It is going to ensure the correctness of each request
+- It can catch the failures. 
+- It can validate response data. 
+
+![alt text](image-3.png)
+
+Different types of assertions available in JMeter 
+
+Response Assertion 
+JSON Assertion 
+Size Assertion 
+
+## Listeners in JMeter 
+Listeners are the components in JMeter that can record the test results of your performance testing. 
+
+Ex:
+- View results tree ==> This listener can capture the entire request along with the response for each and every individual request. 
+- Summary Report ==> This listener can capture the response time of each and every request and also the average, minimum and maximum response time for each and every request. 
+- Assertion results ==> This listener can capture the results of each and every assertion. 
+
+## Logical Controller in JMeter ?
+Logical controller can control how to run requests and when to run requests. 
+Different types of logical controller if you see,
+- if controller => Execute request only if condition is true. 
+- Loop Controller => How many times do we want to run the request? 
+
+## Pre-processor and post-processor 
+Pre-processor is a component that is going to execute before a sampler request is sent. 
+
+Ex: JSR223 PreProcessor
+long timestamp = System.currentTimeMillis();
+vars.put("currentTime",timestamp.toString());
+
+Post Processor is a component that is going to execute after receiving response.
+{
+    "token": "1234abcd"
+}
+

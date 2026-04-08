@@ -1,12 +1,12 @@
 {
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.5.0",
+    "@types/node": "^25.5.2",
     "@types/pg": "^8.18.0",
     "typescript": "^5.9.3"
   },
   "scripts": {
-   
+    "load-test":"playwright test tests/load/load-test.spec.ts"
   },
   "dependencies": {
     "excel": "^1.0.1",

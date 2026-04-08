@@ -84,6 +84,11 @@ test('CSS selector syntax', async ({ page }) => {
     // 16.Scroll down till bookstore services table
     await bookstoreServices.scrollIntoViewIfNeeded();
 
+    //scroll till page end
+    await page.evaluate(() => {
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+
     // 17.get total rows of books store services table
     const rows = page.locator('//span[text()="Bookstore services:"]/following-sibling::table[1]//tr');
     const totalRows = await rows.count();
