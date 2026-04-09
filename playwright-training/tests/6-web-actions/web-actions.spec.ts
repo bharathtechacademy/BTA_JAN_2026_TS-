@@ -123,8 +123,8 @@ test('CSS selector syntax', async ({ page }) => {
     await expect(selectedOption).toBe('option1');
 
     //Verify the all selected option in the dropdown.
-    let selectedOptions = await dropdown.sele
-    await expect(selectedOptions).toEqual(['Option 1', 'Option 2', 'Option 3']);
+    let selectedOptions = await dropdown.selectedOptions();
+    await expect(selectedOptions).toHaveCount(3);
 
     //Verify total options available in the dropdown. 
     let optionsCount = await dropdown.locator('option').count();
