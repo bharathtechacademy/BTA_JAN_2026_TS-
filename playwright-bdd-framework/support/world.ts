@@ -22,6 +22,7 @@ class PlaywrightWorld extends World {
 
 }
 
+export type CustomWorld = PlaywrightWorld;
 setWorldConstructor(PlaywrightWorld);
 
 //World : World is a class provided by Cucumber.js that represents the context in which your step definitions are executed. It allows you to share state and data between different steps in a scenario. By creating a custom World class, you can define properties and methods that will be available to all your step definitions.

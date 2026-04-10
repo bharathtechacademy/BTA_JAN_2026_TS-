@@ -34,6 +34,11 @@ export class LoginPageSteps {
         await this.web.clickElement(loginPage.loginButton);
     }
 
+    //Method to verify forgot password link is displayed in the login page
+    async verifyForgotPasswordLinkIsDisplayed() {
+        await this.web.isElementVisible(loginPage.forgotPasswordLink);
+    }
+
     //Method to click on the Forgot Password link
     async clickForgotPasswordLink() {
         await this.web.clickElement(loginPage.forgotPasswordLink);
