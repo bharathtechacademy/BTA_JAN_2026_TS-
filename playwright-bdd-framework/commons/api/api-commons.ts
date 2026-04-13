@@ -38,6 +38,7 @@ export class ApiCommons {
             default:
                 throw new Error(`Unsupported request type: ${requestType}`);
         }
+        await new Promise(resolve => setTimeout(resolve, 2000));
         console.log(await this.response.text());
     }
 
@@ -59,7 +60,10 @@ export class ApiCommons {
     //Method to validate response body 
     async validateResponseBody(key: string, expectedValue: any) {
         const actualResponseBody = await this.response.json();
-        const actualValue = actualResponseBody[key];
+        if(expectedValue === "true" || expectedValue === "false"){
+            expectedValue = Boolean(expectedValue);
+        }
+        const actualValue = actualResponseBody[key];        
         expect(actualValue).toBe(expectedValue);
     }
 
@@ -82,13 +86,6 @@ export class ApiCommons {
         const cookies = await this.requestContext.cookies();
         const cookieValue = cookies[cookieName];
         expect(cookieValue).toBe(expectedCookieValue);
-    }
-
-    //Method to store data copied from the response. 
-    async storeDataFromResponse(objectName:any, key: string) {
-        const actualResponseBody = await this.response.json();
-        const valueToStore = actualResponseBody[key];
-        data[objectName][key] = valueToStore;
     }
 
 }

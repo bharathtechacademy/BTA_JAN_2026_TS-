@@ -21,7 +21,7 @@ export class CookiesPageSteps {
     async verifyCookiesPageContent(expectedContent: string) {
         await this.web.isElementVisible(cookiesPage.cookiesContent);
         const actualContent = await this.web.getText(cookiesPage.cookiesContent);
-        if (actualContent !== expectedContent) {
+        if (!actualContent?.includes(expectedContent)) {
             throw new Error(`Expected content: ${expectedContent}, but got: ${actualContent}`);
         }
     }

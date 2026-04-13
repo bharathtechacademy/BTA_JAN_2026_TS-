@@ -13,8 +13,9 @@ Then('Cookies pop-up should be displayed', async function (this: CustomWorld){
 });
 
 //And Verify the content of the cookies popup
-Then('Verify the content of the cookies popup {string}', async function (this: CustomWorld, expectedContent: string){
-    await this.cookiesPageSteps.verifyCookiesPageContent(expectedContent);
+Then('Verify the content of the cookies popup', function (this: CustomWorld, docString: string){
+    const expectedContent = docString;
+    return this.cookiesPageSteps.verifyCookiesPageContent(expectedContent);
 });
 
 //And Verify the logos in the cookies popup

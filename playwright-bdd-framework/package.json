@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "change directory => cd playwright-bdd-framework",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cucumber-js features"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
