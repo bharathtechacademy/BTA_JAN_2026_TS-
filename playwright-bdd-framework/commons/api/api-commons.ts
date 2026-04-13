@@ -1,6 +1,6 @@
 import { expect, request } from '@playwright/test';
-import config from '../../config/config.json';
-import data from '../../testdata/api/data.json';
+import config from '../../config/config.json' with { type: 'json' };
+import data from '../../testdata/api/data.json' with { type: 'json' };
 
 export class ApiCommons {
 

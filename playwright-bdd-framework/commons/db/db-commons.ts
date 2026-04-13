@@ -1,5 +1,5 @@
 import { Client } from "pg";
-import config from '../../config/config.json';
+import config from '../../config/config.json' with { type: 'json' };
 
 
 

@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test";
-import cookiesPage from '../page-elements/cookies-page-elements.json';
-import { WebCommons } from "../../commons/ui/web-commons";
+import cookiesPage from '../page-elements/cookies-page-elements.json' with { type: 'json' };
+import { WebCommons } from "../../commons/ui/web-commons.ts";
 
 export class CookiesPageSteps {
 

@@ -1,6 +1,6 @@
 import { Given,When,Then } from "@cucumber/cucumber";
-import {CustomWorld} from "../../support/world";
-import data from "../../testdata/ui/data.json";
+import {CustomWorld} from "../../support/world.ts";
+import data from "../../testdata/ui/data.json" with { type: "json" };
 
 //Given Launch the Creatio Application
 Given('Launch the Creatio Application', async function (this: CustomWorld){
@@ -46,6 +46,7 @@ When('User clicks on the show details link in the cookies popup', async function
 Then('Verify cookies popup should be displayed in expanded mode', async function (this: CustomWorld){
     await this.cookiesPageSteps.verifyExpandedViewOfCookiesPopUp();
 });
+
 
 //When User clicks on the "allow all" button in the cookies popup
 When('User clicks on the {string} button in the cookies popup', async function (this: CustomWorld, buttonName: string){

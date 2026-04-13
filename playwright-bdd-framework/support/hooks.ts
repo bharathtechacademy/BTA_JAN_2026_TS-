@@ -1,5 +1,6 @@
 import { Browser, BrowserContext, Page, chromium } from '@playwright/test';
 import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from '@cucumber/cucumber';
+import { CustomWorld } from './world.ts';
 
 let browser: Browser;
 let context: BrowserContext;
@@ -17,6 +18,7 @@ Before(async function () {
     context = await browser.newContext();
     page = await context.newPage();
     this.page = page;
+    this.initializePageObjects();
 });
 
 //Method to close the browser context after each scenario

@@ -37,6 +37,6 @@ Feature: Cookies feature in the creatio CRM application
     Scenario: Verify Cookies Pop-up Allow All button functionality
         Given Launch the Creatio Application
         Then Cookies pop-up should be displayed
-        And Verify the Allow All button is displayed in the cookies popup
+        And Verify the selection buttons in the cookies popup
         When User clicks on the "allow all" button in the cookies popup
         Then Verify cookies popup should be closed

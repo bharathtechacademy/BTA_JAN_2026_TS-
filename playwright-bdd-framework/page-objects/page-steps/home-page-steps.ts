@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test";
-import homePage from '../page-elements/home-page-elements.json';
-import { WebCommons } from "../../commons/ui/web-commons";
+import homePage from '../page-elements/home-page-elements.json' with { type: 'json' };
+import { WebCommons } from "../../commons/ui/web-commons.ts";
 
 export class HomePageSteps {
 
