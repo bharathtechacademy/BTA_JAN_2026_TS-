@@ -9,8 +9,12 @@
         "username":"invaliduser@outlook.com",
         "password":"InvalidPassword#123"
     },
-    "Test Case 12: verify logout functionality within the application.": {
+    "Test Case 12: verify logout functionality within the application.": [ {
          "username":"bharattechacademy5@outlook.com",
         "password":"BharathTechAcademy#1234"
-    }
+    },
+  {
+    "username":"bharattechacademy5@outlook.com",
+        "password":"BharathTechAcademy#1234"
+  }]
 }

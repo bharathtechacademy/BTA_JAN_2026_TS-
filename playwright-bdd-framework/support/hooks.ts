@@ -6,7 +6,7 @@ let browser: Browser;
 let context: BrowserContext;
 let page: Page;
 
-setDefaultTimeout(12000);
+setDefaultTimeout(180000);
 
 //Method to launch the browser engine 
 BeforeAll(async function () {

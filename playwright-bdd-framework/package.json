@@ -4,7 +4,8 @@
   "description": "change directory => cd playwright-bdd-framework",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js features"
+    "test": "cucumber-js features",
+    "load-test": "cucumber-js features/load/load-test.feature"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +13,7 @@
   "type": "module",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.5.2"
+    "@types/node": "^25.6.0"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.7.0",

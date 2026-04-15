@@ -25,12 +25,12 @@ export class JMeterCommons {
 
         //Update the relative path from the project folder to get JMeter properties & JMX file
         const projectRoot = process.cwd(); // Get the current working directory (project root) 
-        const jmeterBasePath = `${projectRoot}/tests/load/jmeter`;
-        const jmeterToolPath = `${projectRoot}/tests/load/jmeter/bin/jmeter.bat`;
-        const testplanPath = `${projectRoot}/tests/load/jmeter/testplan/${jmxFile}`;
-        const timestamp = new Date().getDate().toString();
+        const jmeterBasePath = `${projectRoot}/step-definitions/performance/jmeter`;
+        const jmeterToolPath = `${jmeterBasePath}/bin/jmeter.bat`;
+        const testplanPath = `${jmeterBasePath}/testplan/${jmxFile}`;
+        const timestamp = Date.now().toString();
         const resultsPath = `${projectRoot}/tests/load/jmeter/results/TestResult_${timestamp}.csv`;
-        const reportsPath = `${projectRoot}/tests/load/jmeter/report-output`
+        const reportsPath = `${projectRoot}/tests/load/jmeter/report-output/report_${timestamp}`
 
         //Run the JMeter Test Plan and generate CSV test results
         const commandToRunJMeterFile = `"${jmeterToolPath}" -n -t "${testplanPath}" -l "${resultsPath}"`;
