@@ -1,0 +1,72 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Verify successful login with valid credentials,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser. Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application. URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,Cookies pop-up should get displayed before the login page.,,,
+,,,4,Select 'Allow All' in Cookies popup,Cookies popup should close successfully.,,,
+,,,5,Verify login page is displayed,Login page should be displayed.,,,
+,,,6,Enter valid Business Email and Password,Credentials should be accepted.,,,
+,,,7,Click Login,User should be redirected to CRM dashboard.,,,
+
+,Test Case,Verify error for invalid email format,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser. Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application. URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,Cookies pop-up should get displayed before the login page.,,,
+,,,4,Select 'Allow All' in Cookies popup,Cookies popup should close successfully.,,,
+,,,5,Verify login page is displayed,Login page should be displayed.,,,
+,,,6,Enter invalid email format (e.g. abc@xyz),Business Email field should be highlighted in red.,,,
+,,,7,Click Login,"Error message 'Invalid email format' should be displayed.",,,
+
+,Test Case,Verify error for email exceeding 400 characters,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser. Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application. URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,Cookies pop-up should get displayed before the login page.,,,
+,,,4,Select 'Allow All' in Cookies popup,Cookies popup should close successfully.,,,
+,,,5,Verify login page is displayed,Login page should be displayed.,,,
+,,,6,Enter email >400 characters,Field should be highlighted in red.,,,
+,,,7,Click Login,"Error message 'Invalid email format' should be displayed.",,,
+
+,Test Case,Verify error for password exceeding 100 characters,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser. Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application. URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,Cookies pop-up should get displayed before the login page.,,,
+,,,4,Select 'Allow All' in Cookies popup,Cookies popup should close successfully.,,,
+,,,5,Verify login page is displayed,Login page should be displayed.,,,
+,,,6,Enter password >100 characters,Password field should be highlighted in red.,,,
+,,,7,Click Login,"Error message 'Invalid value. Value must contain up to 100 characters' should be displayed.",,,
+
+,Test Case,Verify error for invalid credentials,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser. Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application. URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,Cookies pop-up should get displayed before the login page.,,,
+,,,4,Select 'Allow All' in Cookies popup,Cookies popup should close successfully.,,,
+,,,5,Verify login page is displayed,Login page should be displayed.,,,
+,,,6,Enter valid email but wrong password,Credentials should be rejected.,,,
+,,,7,Click Login,"Error message 'Invalid email or password' should be displayed at bottom of page.",,,
+
+,Test Case,Verify login with empty fields,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser. Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application. URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,Cookies pop-up should get displayed before the login page.,,,
+,,,4,Select 'Allow All' in Cookies popup,Cookies popup should close successfully.,,,
+,,,5,Verify login page is displayed,Login page should be displayed.,,,
+,,,6,Leave email and password blank,Fields should remain empty.,,,
+,,,7,Click Login,Validation messages should appear for both fields.,,,
+
+,Test Case,Verify login with only email entered,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser. Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application. URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,Cookies pop-up should get displayed before the login page.,,,
+,,,4,Select 'Allow All' in Cookies popup,Cookies popup should close successfully.,,,
+,,,5,Verify login page is displayed,Login page should be displayed.,,,
+,,,6,Enter valid email but leave password blank,Password field should remain empty.,,,
+,,,7,Click Login,Validation message should appear for password field.,,,
+
+,Test Case,Verify login with only password entered,,,,Creatio CRM,Bharath Tech Academy <bharattechacademy3@outlook.com>,Design
+,,,1,"Launch the browser. Browser = Chrome",Browser should be launched successfully.,,,
+,,,2,"Enter URL and launch the application. URL = https://accounts.creatio.com/login/alm",Application should be launched successfully.,,,
+,,,3,Verify whether Cookies popup is getting displayed,Cookies pop-up should get displayed before the login page.,,,
+,,,4,Select 'Allow All' in Cookies popup,Cookies popup should close successfully.,,,
+,,,5,Verify login page is displayed,Login page should be displayed.,,,
+,,,6,Enter valid password but leave email blank,Email field should remain empty.,,,
+,,,7,Click Login,Validation message should appear for email field.,,,
